@@ -1,0 +1,12 @@
+.vscode
+__pycache__
+
+*.avi
+*.mkv
+*.mp4
+*.MOV
+*.mov
+
+experiments/
+temp/
+models/
