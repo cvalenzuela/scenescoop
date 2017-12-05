@@ -4,7 +4,7 @@ Scenescoop is a tool to get similar semantic scenes from a pair of videos. Basic
 
 This project is inspired by [Thingscoop](https://github.com/agermanidis/thingscoop) made by [@agermanidis](https://github.com/agermanidis).
 
-![description2](description2.png)
+![description](img.png)
 
 ## How it works
 
