@@ -8,7 +8,7 @@ This project is inspired by [Thingscoop](https://github.com/agermanidis/thingsco
 
 ## How it works
 
-Scenescoop uses the [im2text](https://github.com/tensorflow/models/tree/master/research/im2txt) tensorflow model on a frame by frame basis over the input and transfer video. It then uses [Spacy](https://spacy.io/) to  average the word vectors in a sentence and [Annoy](https://github.com/spotify/annoy) to create an index for fast nearest-neighbor lookup. (based on [@](aparrish) [Plot to poem](https://github.com/aparrish/plot-to-poem/blob/master/plot-to-poem.ipynb)
+Scenescoop uses the [im2text](https://github.com/tensorflow/models/tree/master/research/im2txt) tensorflow model on a frame by frame basis over the input and transfer video. It then uses [Spacy](https://spacy.io/) to  average the word vectors in a sentence and [Annoy](https://github.com/spotify/annoy) to create an index for fast nearest-neighbor lookup. (based on [@aparrish](https://github.com/aparrish) [Plot to poem](https://github.com/aparrish/plot-to-poem/blob/master/plot-to-poem.ipynb)
 
 ## Demos
 
@@ -17,7 +17,7 @@ Scenescoop uses the [im2text](https://github.com/tensorflow/models/tree/master/r
 
 Get frames and run model over video
 ```
-python main.py --video videos/her.mkv --name her
+python main.py --video videos/moonrisekingdom.mp4 --name moonrisekingdom
 ```
 
 Transform a video
