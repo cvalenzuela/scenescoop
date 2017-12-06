@@ -14,6 +14,14 @@ Scenescoop uses the [im2text](https://github.com/tensorflow/models/tree/master/r
  
 TODO
 
+## Live Web App
+
+Soon
+
+## Mobile App
+
+Soon
+
 ## Usage
 
 Get frames and run model over video
