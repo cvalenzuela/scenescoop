@@ -18,7 +18,7 @@ TODO
 
 Soon
 
-## Mobile App
+## Mobile App
 
 Soon
 
