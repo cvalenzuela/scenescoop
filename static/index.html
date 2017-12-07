@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Scenescoop</title>
+  <link rel="stylesheet" href="node_modules/video.js/dist/video-js.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <video src="" autoplay loop width="300" id="inputVideo"></video>
-  <video src="videos/outputs/demo.mp4" autoplay loop width="300" id="outputVideo"></video>
-
-  <form id="form">
+  <div id="controls">
+    <form id="form">
       <input type="file" id="inputFileVideo" size="500" name="file">
-      <input type="submit" value="Upload Video">
-  </form>
+      <input type="submit" value="Upload Video" id="submit">
+    </form>
+    <button id="sceneSearch">Scene Search</button>
+    <select id="movies">
+        <option value="her">Her</option>
+        <option value="moonrisekingdom">Moonrise Kindom</option>
+        <option value="blackmirror">Black Mirror</option>
+        <option value="samsara">Samsara</option>
+        <option value="vertigo">Vertigo</option>
+        <option value="lefils">Le Fils</option>
+    </select>
+  </div>
 
+  <div id="cards">
+    <div id="input" class="videoCard">
+      <video id="inputVideo" class="video-js" data-setup='{}'></video>
+      <img src="imgs/loading.gif" alt="loading" srcset="imgs/loading.gif" class="loading" id="loadingTextInput">
+      <p id="inputText" class="resultText"></p>
+    </div>
+
+    <div id="output" class="videoCard">
+      <video id="outputVideo" class="video-js" data-setup='{}'></video>
+      <img src="imgs/loading.gif" alt="loading" srcset="imgs/loading.gif" class="loading" id="loadingTextOutput">
+      <p id="outputText" class="resultText"></p>
+    </div>
+  </div>
   <script src="bundle.js"></script>
 </body>
+
 </html>

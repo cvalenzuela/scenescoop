@@ -17,5 +17,8 @@
     "browserify": "14.5.0",
     "uglifyify": "4.0.5",
     "watchify": "3.9.0"
+  },
+  "dependencies": {
+    "video.js": "6.4.0"
   }
 }

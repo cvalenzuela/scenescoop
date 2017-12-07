@@ -1,10 +1,92 @@
 *{
   margin: 0px;
   padding: 0px;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  background: rgb(34,34,34);
+}
+
+p{
+  display: inline;
+  font-size: 0.9rem;
+  font-weight: lighter;
+}
+
+#cards{
+  text-align: center;
+  margin-top: 25vh;
+}
+
+#sceneSearch{
+  padding: 3px;
+}
+
+.loading{
+  margin: 0 auto;
+  width: 20px;
+  display: none;
+}
+
+.videoCard{
+  display: inline-grid;
+}
+
+.resultText{
+  color:darkgrey;
+  text-align: center;
+}
+
+.vjs-loading-spinner {
+  display: none !important;
+}
+
+.video-js{
+  display: inline-block !important;
+  margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.vjs-big-play-button { 
+  display: none !important; 
+}
+
+.vjs-poster {
+  background-color: #222222 !important;
+}
+
+#controls{
+
+}
+
+#form{
+  /* margin: 0 25vh; */
+}
+
+#sceneSearch{
+  background: #353535;
+  color: #7d7d7d;
+  border: none;
+  margin: 20px;
+  border-radius: 0;
+  padding: 10px;
+  transition: all .2s ease-in-out;
+  transform: scale(1);
+}
+
+#sceneSearch:hover{
+  transform: scale(1.02);
 }
 
 input{
   display: block;
-  margin: 10px;
-  padding: 5px;
+  /* margin: 10px;
+  padding: 5px; */
+}
+
+#inputFileVideo{
+  color:white;
 }

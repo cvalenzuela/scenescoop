@@ -17,12 +17,12 @@ from annoy import AnnoyIndex
 import numpy as np
 
 nlp = spacy.load('en')
-t = AnnoyIndex(300, metric='angular')
 
-def make_movie(output_dir, input_data, seconds, transform_video, transform_data):
+def make_movie(output_dir, input_data, seconds, transform_video, transform_data, api):
   '''
   Make a movie with the given parameters
   '''
+  t = AnnoyIndex(300, metric='angular')
 
   with open(input_data) as infile:
     input_data = json.load(infile)
@@ -55,7 +55,7 @@ def make_movie(output_dir, input_data, seconds, transform_video, transform_data)
       best_description_for_scene = n
   
   # using the best description get the closet semantic meaning in the transform data
-  closest_meaning = nearest_neighbor(transform_data, best_description_for_scene)
+  closest_meaning = nearest_neighbor(transform_data, best_description_for_scene, t)
   print('Original scene is {}. Closest meaning found: {}'.format(best_description_for_scene, closest_meaning))
   # get a largest sequence of frames from that description
   closet_meaning_frames = transform_data[closest_meaning]
@@ -89,6 +89,8 @@ def make_movie(output_dir, input_data, seconds, transform_video, transform_data)
   composition = mp.concatenate([clip])
   video_name = "/{}.mp4".format(str(time()))
   composition.write_videofile(output_dir + video_name)
+  if (api == True):
+    return {"name": video_name, "scene_closest_meaning": closest_meaning}
 
 def meanvector(text):
   '''
@@ -104,7 +106,7 @@ def meanvector(text):
     return np.array(vecs).mean(axis=0)
 
 
-def nearest_neighbor(data, input): 
+def nearest_neighbor(data, input, t): 
   '''
   Creates an Annoy index for fast nearest-neighbor lookup
   '''
@@ -118,7 +120,6 @@ def nearest_neighbor(data, input):
     except IndexError:
       continue
   
-  t.build(25)
+  t.build(50)
   nearest = t.get_nns_by_vector(meanvector(input), n=10)[0]
-
   return map_i_to_description[nearest]

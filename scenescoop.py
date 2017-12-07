@@ -22,12 +22,11 @@ def main(options):
   '''
   Video to img2text
   '''
-
   if(options.video is not None):
     # 1) Extract frames
     extract_frames(options.video, TEMP_DIR, FPS)
 
-    # 2) Run model with images. Send batches of 100
+    # 2) Run model with images. Send batches of 100.
     imgs = glob(TEMP_DIR + '/*.jpg')
     amount = len(imgs)
     batches = [[]]
@@ -42,11 +41,13 @@ def main(options):
       imgs_batches.append(','.join(batch))
   
     # 3) Run model
-    im2text(TEMP_DIR, TRANSCRIPT_DIR, options.name, imgs_batches, amount)
-  
+    model = im2text(TEMP_DIR, TRANSCRIPT_DIR, options.name, imgs_batches, amount)
+    if (options.api):
+      return model
+
   if(options.input_data is not None):
     # 4) Make a movie
-    make_movie(OUTPUT_DIR, options.input_data, options.input_seconds, options.transform_src, options.transform_data)
+    make_movie(OUTPUT_DIR, options.input_data, options.input_seconds, options.transform_src, options.transform_data, False)
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='Storiescoop')
@@ -56,5 +57,6 @@ if __name__ == "__main__":
   parser.add_argument('--input_seconds', type=str, help='Input Video Seconds to create transformation. Example: 1,30')
   parser.add_argument('--transform_src', type=str, help='Transform Video Source.')
   parser.add_argument('--transform_data', type=str, help='Transform Video Data. Must be a json file.')
+  parser.add_argument('--api', type=str, help='API Request', default=False)
   args = parser.parse_args()
   main(args) 

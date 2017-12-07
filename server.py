@@ -9,6 +9,19 @@ from flask_cors import CORS
 from werkzeug import secure_filename
 import subprocess
 import socket
+from glob import glob
+from argparse import Namespace
+from os import getcwd, path
+
+from scenescoop import main as scenescoop
+from make_movie import make_movie
+
+CWD = getcwd()
+
+VIDEOS_PATH = path.join(CWD, 'videos') # movies to generate content from
+INPUT_VIDEOS_PATH = path.join(CWD, 'static', 'videos', 'inputs')
+OUTPUT_VIDEOS_PATH = path.join(CWD, 'static', 'videos', 'outputs')
+TRANSCRIPTS_VIDEOS_PATH = path.join(CWD, 'transcripts')
 
 # Initialize the Flask application
 app = Flask(__name__, static_url_path="")
@@ -16,7 +29,8 @@ CORS(app)
 ip = socket.gethostbyname('localhost') # socket.gethostname()
 
 # path to the upload directory
-app.config['UPLOAD_FOLDER'] = 'uploads/'
+app.config['INPUT_VIDEOS_PATH'] = 'static/videos/inputs/'
+app.config['OUTPUT_VIDEOS_PATH'] = 'static/videos/outputs/'
 app.config['ALLOWED_EXTENSIONS'] = set(['MOV', 'mov', 'avi', 'mp4', 'mkv'])
 
 @app.route("/")
@@ -26,19 +40,49 @@ def main():
   '''
   return app.send_static_file('index.html')
 
-@app.route('/video', methods=['POST'])
+@app.route('/upload', methods=['POST'])
 def upload():
   '''
-  Upload Route
+  Upload a video
   '''
-  print(request.form)
   file = request.files['file']
   # Check if the file is one of the allowed types/extensions
   if file and allowed_file(file.filename):
-    filename = secure_filename(file.filename) # Make the filename safe, remove unsupported chars
-    file.save(os.path.join(app.config['UPLOAD_FOLDER'], '{}.mov'.format(request.form["name"])))
+    filename = secure_filename(file.filename)
+    file_path = os.path.join(app.config['INPUT_VIDEOS_PATH'], request.form["name"])
+    file.save(file_path)
+    return analyze_video(file_path, filename)
+  else:
+    return jsonify(status="400", content='Not a valid file')
 
-  return jsonify(status="got text", text="result", title="title")
+@app.route('/make', methods=['POST'])
+def create_output():
+  '''
+  Create a new video given the input video and a user selected film in the database.
+  '''
+
+  input_data = "{}/{}.json".format(TRANSCRIPTS_VIDEOS_PATH, request.form["name"])
+  duration = "0,{}".format(int(float(request.form["duration"])))
+  movie = glob(VIDEOS_PATH + '/{}.*'.format(request.form["movie"]))[0]
+  movie_data = glob(TRANSCRIPTS_VIDEOS_PATH + '/{}.*'.format(request.form["movie"]))[0]
+
+  movie = make_movie(OUTPUT_VIDEOS_PATH, input_data, duration, movie, movie_data, True)
+  return jsonify(status="200", movie=movie)
+
+def analyze_video(file, name):
+  '''
+  Call Scenescoop with the uploaded video
+  '''
+  args = Namespace(video=file, name=name, input_data=None, api=True)
+  scene_content = scenescoop(args)
+  content = ''
+  maxframes = 0
+  for description in scene_content:
+    if(len(scene_content[description]) > maxframes):
+      content = description
+      maxframes = len(scene_content[description]) 
+
+  return jsonify(status="200", scene_content=scene_content, content=content, maxframes=maxframes)
 
 def allowed_file(filename):
   '''

@@ -26,12 +26,12 @@ Soon
 
 Get frames and run model over video
 ```
-python main.py --video videos/moonrisekingdom.mp4 --name moonrisekingdom
+python scenescoop.py --video videos/moonrisekingdom.mp4 --name moonrisekingdom
 ```
 
 Transform a video
 ```
-python main.py --input_data transcripts/street.json --input_seconds 0,5 --transform_src videos/her.avi --transform_data transcripts/her.json
+python scenescoop.py --input_data transcripts/street.json --input_seconds 0,5 --transform_src videos/her.avi --transform_data transcripts/her.json
 ```
 
 Get the pretrained model from [here](https://drive.google.com/open?id=1tSTzD21qXXOiXlfgJllgXNZ9lREy6yij)

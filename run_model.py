@@ -65,5 +65,7 @@ def im2text(temp_dir, transcript_dir, name, imgs_batches, amount):
   temp_file.close()
 
   # Remove the temp folder
-  # shutil.rmtree(TEMP_DIR)
-  # makedirs(TEMP_DIR)
+  shutil.rmtree(temp_dir)
+  makedirs(temp_dir)
+
+  return content

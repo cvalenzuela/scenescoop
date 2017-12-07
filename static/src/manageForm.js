@@ -1,7 +1,7 @@
 // Simple POST
 // https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_forms_through_JavaScript
 
-const sendData = (form, data, callback) => {
+const sendData = (form, data, route ,callback) => {
   const XHR = new XMLHttpRequest();
   const FD = new FormData(form);
   for (const key in data){
@@ -16,7 +16,7 @@ const sendData = (form, data, callback) => {
     console.log('Oups! Something goes wrong.');
   });
 
-  XHR.open("POST", "/video");
+  XHR.open("POST", route);
 
   XHR.send(FD);
 }
