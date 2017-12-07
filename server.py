@@ -91,4 +91,4 @@ def allowed_file(filename):
   return '.' in filename and filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
 
 if __name__ == "__main__":
-    app.run(host=ip, port=8080, debug=True, threaded=True)
+    app.run(host=ip, port=8080, debug=False, threaded=True)
