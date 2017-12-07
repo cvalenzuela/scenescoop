@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # ----
 # Scenescoop
+# Cristobal Valenzuela
+# cv965@nyu.edu
+# https://github.com/cvalenzuela/scenescoop
 # ----
 
 import argparse
@@ -13,7 +16,7 @@ from run_model import im2text
 from make_movie import make_movie
 
 CWD = getcwd()
-TEMP_DIR = path.join(CWD, 'temp')
+TEMP_DIR = path.join(CWD, 'temptemp')
 OUTPUT_DIR = path.join(CWD, 'outputs')
 TRANSCRIPT_DIR = path.join(CWD, 'transcripts')
 FPS = 1

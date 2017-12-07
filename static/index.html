@@ -11,35 +11,42 @@
 </head>
 
 <body>
-  <div id="controls">
-    <form id="form">
-      <input type="file" id="inputFileVideo" size="500" name="file">
-      <input type="submit" value="Upload Video" id="submit">
-    </form>
-    <button id="sceneSearch">Scene Search</button>
-    <select id="movies">
-        <option value="her">Her</option>
-        <option value="moonrisekingdom">Moonrise Kindom</option>
-        <option value="blackmirror">Black Mirror</option>
-        <option value="samsara">Samsara</option>
-        <option value="vertigo">Vertigo</option>
-        <option value="lefils">Le Fils</option>
-    </select>
-  </div>
 
   <div id="cards">
     <div id="input" class="videoCard">
+      <form id="form" style="display: none;" name="form">
+        <input type="file" id="inputFileVideo" size="5000" name="file">
+        <input type="submit" value="Upload Video" id="submit">
+      </form>
+      <div id="formBtns">
+        <button id="selectVideoBtn" class="Btn">Select Video</button>
+        <button id="uploadVideoBtn" class="Btn">Upload Video</button>
+      </div>
       <video id="inputVideo" class="video-js" data-setup='{}'></video>
-      <img src="imgs/loading.gif" alt="loading" srcset="imgs/loading.gif" class="loading" id="loadingTextInput">
-      <p id="inputText" class="resultText"></p>
+      <div class="resultdescription">
+        <img src="imgs/loading.gif" alt="loading" srcset="imgs/loading.gif" class="loading" id="loadingTextInput">
+        <p id="inputText" class="resultText"></p>
+      </div>
     </div>
 
     <div id="output" class="videoCard">
+      <div class="dropdown" id="moviesDropdown">
+        <button id="dropdownBtn" class="Btn">Films</button>
+        <div id="moviesDD" class="dropdown-content">
+        </div>
+      </div>
       <video id="outputVideo" class="video-js" data-setup='{}'></video>
-      <img src="imgs/loading.gif" alt="loading" srcset="imgs/loading.gif" class="loading" id="loadingTextOutput">
-      <p id="outputText" class="resultText"></p>
+      <div class="resultdescription"></div>
+        <img src="imgs/loading.gif" alt="loading" srcset="imgs/loading.gif" class="loading" id="loadingTextOutput">
+        <p id="outputText" class="resultText"></p>
+      </div>
     </div>
   </div>
+
+  <div id="search">
+    <button id="sceneSearch" class="Btn">Scene Search</button>
+  </div>
+
   <script src="bundle.js"></script>
 </body>
 

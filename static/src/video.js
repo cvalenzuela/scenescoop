@@ -4,13 +4,15 @@ Manage the videos
 
 import videojs from 'video.js';
 
+let width = (window.innerWidth/2) - 40;;
+
 // Input video
 const input = videojs("inputVideo", {
   controls: true,
   autoplay: true,
   loop: true,
   preload: 'auto',
-  width: 300
+  width: width
 }, () => {
   console.log('video input ready')
 });
@@ -36,7 +38,7 @@ const output = videojs("outputVideo", {
   autoplay: true,
   loop: true,
   preload: 'auto',
-  width: 300
+  width: width
 }, () => {
   console.log('video output ready')
 });
@@ -44,6 +46,12 @@ const output = videojs("outputVideo", {
 output.on('ready', () => {
   //output.src(outputSource)
 })
+
+window.addEventListener("resize", () => {
+  width = (window.innerWidth/2) - 40;
+  input.width(width);
+  output.width(width);
+});
 
 export {
   input,

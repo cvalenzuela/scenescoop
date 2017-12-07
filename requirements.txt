@@ -1,0 +1,9 @@
+Flask==0.12.1
+moviepy==0.2.2.12
+nltk==3.2.2
+numpy==1.12.1
+spacy==1.7.3
+tensorflow==1.1.0
+Werkzeug==0.11.15
+annoy==1.10.0
+flask_cors==3.0.3
