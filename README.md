@@ -1,6 +1,6 @@
 # Scenescoop
 
-Scenescoop is a tool to get similar semantic scenes from a pair of videos. Basically, you input a video and get a scene that has a similar meaning in another video. 
+Scenescoop is a tool to get similar semantic scenes from a pair of videos. Basically, you input a video and get a scene that has a similar meaning in another video. You can run it as a python script or as a web app.
 
 ![description](static/imgs/description.png)
 
@@ -46,7 +46,7 @@ python scenescoop.py --video videos/moonrisekingdom.mp4 --name moonrisekingdom
 
 The `.json` file should look something like this:
 
-```json
+```
 { 
 ...
 "a person is taking a picture of themselves in a mirror ": [4834], 
