@@ -16,7 +16,7 @@ from run_model import im2text
 from make_movie import make_movie
 
 CWD = getcwd()
-TEMP_DIR = path.join(CWD, 'temptemp')
+TEMP_DIR = path.join(CWD, 'temp')
 OUTPUT_DIR = path.join(CWD, 'outputs')
 TRANSCRIPT_DIR = path.join(CWD, 'transcripts')
 FPS = 1
