@@ -2,8 +2,6 @@
 
 Scenescoop is a tool to get similar semantic scenes from a pair of videos. Basically, you input a video and get a scene that has a similar meaning in another video. 
 
-This project is inspired by [Thingscoop](https://github.com/agermanidis/thingscoop).
-
 ![description](static/imgs/description.png)
 
 ## How it works
@@ -13,6 +11,8 @@ Scenescoop uses the [im2text](https://github.com/tensorflow/models/tree/master/r
 Scenes are then analyzed with [spaCy](https://spacy.io/), for sentence parsing and built-in word vectors, using the average of the word vectors in the sentence. 
 
 [Annoy](https://github.com/spotify/annoy) is finally used to create an index for fast nearest-neighbor lookup (based on [@aparrish](https://github.com/aparrish) [Plot to poem](https://github.com/aparrish/plot-to-poem/blob/master/plot-to-poem.ipynb))
+
+This project is inspired by [Thingscoop](https://github.com/agermanidis/thingscoop).
 
 ## Demos
 
