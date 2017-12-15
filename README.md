@@ -117,9 +117,31 @@ cd static
 yarn watch
 ```
 
-## Mobile App
+## MMS
 
-Soon
+Local development of the MMS application:
+
+Start ngrok
+```
+./ngrok http 7676
+```
+
+Configure the url in Twilio and in the server in `NGROK_URL`
+
+Start the Redis server
+```
+redis-server
+```
+
+Start the Celery worker:
+```
+celery -A server.celery worker
+````
+
+Finally start the server
+````
+python server.py
+```
 
 ## License
 

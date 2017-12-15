@@ -50,7 +50,7 @@ window.addEventListener("load", () => {
   // Manage the video preview
   const onSelectFile = () => {
     const file = inputFileVideo.files[0];
-    currentInputName = file.name;
+    currentInputName = file.name; // example.mp4
     const url = URL.createObjectURL(file);
     inputText.innerText = '';
     changeSource(input, url)
@@ -98,11 +98,11 @@ window.addEventListener("load", () => {
         response = JSON.parse(response);
         loadingTextOutput.style.display = 'none';
         if (response.status == 200) {
-          const description = response.movie.scene_closest_meaning;
+          const description = response.scene.scene_closest_meaning;
           outputText.innerText = description.charAt(0).toUpperCase() + description.slice(1);
           updateSceneSearchBtn('ACTIVATE');
           sceneSearch = true;
-          changeSource(output, `${outputVideosPath}${response.movie.name}`)
+          changeSource(output, `${outputVideosPath}${response.scene.name}`)
         }
       });
     }

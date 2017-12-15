@@ -10,9 +10,9 @@ from time import time
 import shutil
 
 def im2text(temp_dir, transcript_dir, name, imgs_batches, amount):
-  '''
+  """
   Run img2txt over a sequence of images
-  '''
+  """
   print('Running the model on {} images'.format(amount))
 
   original_results = path.join(temp_dir, str(time()) + '.txt')

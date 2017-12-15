@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # ----
-# Make a video with given frames
+# Makes a scene with given parameters
 # Uses spacy and annoy to get closet semantic similarity between two videos
 # Reference: https://github.com/aparrish/plot-to-poem/blob/master/plot-to-poem.ipynb
 # ----
@@ -18,9 +18,9 @@ import numpy as np
 
 nlp = spacy.load('en')
 
-def make_movie(output_dir, input_data, seconds, transform_video, transform_data, api):
+def make_scene(output_dir, input_data, seconds, transform_video, transform_data, api):
   '''
-  Make a movie with the given parameters
+  Make a scene with the given parameters
   '''
   t = AnnoyIndex(300, metric='angular')
 

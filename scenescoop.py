@@ -13,7 +13,7 @@ from time import time
 
 from get_frames import extract_frames
 from run_model import im2text
-from make_movie import make_movie
+from make_scene import make_scene
 
 CWD = getcwd()
 TEMP_DIR = path.join(CWD, 'temp')
@@ -50,7 +50,7 @@ def main(options):
 
   if(options.input_data is not None):
     # 4) Make a movie
-    make_movie(OUTPUT_DIR, options.input_data, options.input_seconds, options.transform_src, options.transform_data, False)
+    make_scene(OUTPUT_DIR, options.input_data, options.input_seconds, options.transform_src, options.transform_data, False)
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='Storiescoop')
