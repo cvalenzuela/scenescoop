@@ -85,7 +85,6 @@ def async_scenescoop(file_path, video_name, client_number, MessageSid, MediaSid)
   # Delete the original media from Twilio's server
   delete_media_file(MessageSid, MediaSid)
 
-
 @app.route("/")
 def main():
   """
@@ -199,8 +198,6 @@ def delete_media():
     MessageSid = request.form["MessageSid"]
     MediaSid = request.form["MediaUrl0"].split('/')[-1]
     delete_media_file(MessageSid, MediaSid)
-
-
 
 def delete_media_file(MessageSid, MediaSid):
   """

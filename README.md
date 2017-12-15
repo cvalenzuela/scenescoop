@@ -136,10 +136,10 @@ redis-server
 Start the Celery worker:
 ```
 celery -A server.celery worker
-````
+```
 
 Finally start the server
-````
+```
 python server.py
 ```
 
