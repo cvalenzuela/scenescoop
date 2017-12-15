@@ -7,8 +7,11 @@ __pycache__
 *.MOV
 *.mov
 
+ngrok
+
 experiments/
 temp/
 models/
 temptest/
 videos/
+twilio/
