@@ -3,6 +3,14 @@
 
 const moviesList = [
   {
+    name: "Gone with the Wind (1939) - Victor Fleming",
+    file: "GoneWithTheWind.mkv"
+  },
+  {
+    name: "Rebel Without a Cause (1955) - Nicholas Ray",
+    file: "RebelWithoutACause.mp4"
+  },
+  {
     name: "Vertigo (1958) - Alfred Hitchcock",
     file: "Vertigo.mp4",
   },
@@ -15,12 +23,20 @@ const moviesList = [
     file: "ANewHope.mkv"
   },
   {
+    name: "Paris, Texas (1984) - Wim Wenders",
+    file: "ParisTexas.mkv"
+  },
+  {
     name: "Rosemary's Baby (1993) - Roman Polanski",
     file: "RosemarysBaby.mp4",
   },
   {
     name: "Dazed and Confused (1993) - Richard Linklater",
     file: "DazedAndConfused.mp4",
+  },
+  {
+    name: "Ghost in the Shell (1995) - Mamoru Oshii",
+    file: "GhostintheShell.mp4"
   },
   {
     name: "Eyes Wide Shut (1999) - Stanley Kubrick",
@@ -55,7 +71,7 @@ const moviesList = [
     file: "Her.mkv",
   },
   {
-    name: "Fargo: season 1, episode 1 (2014) - Noah Hawley",
+    name: "Fargo: Season 1, Episode 1 (2014) - Noah Hawley",
     file: "FargoS01E01.mkv"
   },
   {
@@ -67,9 +83,13 @@ const moviesList = [
     file: "CafeSociety.mkv"
   },
   {
+    name: "Stranger Things: Season 1, Episode 1 (2016) - The Duffer Brothers",
+    file: "StrangerThingsE1.mp4"
+  },
+  {
     name: "American Made (2017) - Doug Liman",
     file: "AmericanMade.mkv"
-  },
+  }
 ]
 
 export {

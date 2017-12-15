@@ -14,9 +14,10 @@ Scenes are then analyzed with [spaCy](https://spacy.io/), for sentence parsing a
 
 This project is inspired by [Thingscoop](https://github.com/agermanidis/thingscoop).
 
-## Demos
+## Video Demos
 
-Soon!
+### [A man sitting at a table with a plate of food](https://youtu.be/ZF5W_tcnF4s)
+[![A man sitting at a table with a plate of food](static/imgs/food.png)](https://youtu.be/ZF5W_tcnF4s)
 
 ## Usage
 

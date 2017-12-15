@@ -3,7 +3,6 @@
 # Server
 # ----
 
-
 import os
 import requests
 from flask import Flask, request, send_from_directory, jsonify, Response
@@ -24,7 +23,7 @@ from make_scene import make_scene
 
 from credentials import account_sid, auth_token, number, movies
 client = Client(account_sid, auth_token)
-NGROK_URL = '0827f7f6.ngrok.io'
+NGROK_URL = '784cfa3c.ngrok.io'
 
 CWD = getcwd()
 
