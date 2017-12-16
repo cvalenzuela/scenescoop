@@ -19,6 +19,9 @@ This project is inspired by [Thingscoop](https://github.com/agermanidis/thingsco
 ### [A man sitting at a table with a plate of food](https://youtu.be/ZF5W_tcnF4s)
 [![A man sitting at a table with a plate of food](static/imgs/food.png)](https://youtu.be/ZF5W_tcnF4s)
 
+### [A group of people walking down the street](https://youtu.be/ZF5W_tcnF4s)
+[![A group of people walking down the street](static/imgs/street.png)](https://youtu.be/aaYVMsMMEjc)
+
 ## Usage
 
 To run this you'll need to install a few dependencies. You can follow the [original repository](https://github.com/tensorflow/models/tree/master/research/im2txt) or the instructions [Edouard Fouché](https://edouardfouche.com/Fun-with-Tensorflow-im2txt/) wrote.
