@@ -23,7 +23,7 @@ from make_scene import make_scene
 
 from credentials import account_sid, auth_token, number, movies
 client = Client(account_sid, auth_token)
-NGROK_URL = '784cfa3c.ngrok.io'
+NGROK_URL = '66807ec1.ngrok.io'
 
 CWD = getcwd()
 
@@ -73,6 +73,7 @@ def async_scenescoop(file_path, video_name, client_number, MessageSid, MediaSid)
   scene = make_scene(OUTPUT_VIDEOS_PATH, input_data, duration, movie, movie_data, True)
   
   # Once the scene is created, send it.
+  print('Sending Message')
   message = client.api.account.messages.create(
     to=client_number,
     from_=number,

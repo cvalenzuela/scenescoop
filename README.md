@@ -19,7 +19,7 @@ This project is inspired by [Thingscoop](https://github.com/agermanidis/thingsco
 ### [A man sitting at a table with a plate of food](https://youtu.be/ZF5W_tcnF4s)
 [![A man sitting at a table with a plate of food](static/imgs/food.png)](https://youtu.be/ZF5W_tcnF4s)
 
-### [A group of people walking down the street](https://youtu.be/ZF5W_tcnF4s)
+### [A group of people walking down the street](https://youtu.be/aaYVMsMMEjc)
 [![A group of people walking down the street](static/imgs/street.png)](https://youtu.be/aaYVMsMMEjc)
 
 ## Usage

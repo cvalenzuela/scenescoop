@@ -150,3 +150,24 @@ input{
 .show {
   display:block;
 }
+
+#phone{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left:30px;
+  bottom: 20px;
+}
+
+#phone p {
+  color: #8e8e8e;
+  font-size: 1.4vw;
+}
+
+#textAVideo{
+
+  color: #8e8e8e;
+  left: 0;
+  right: 0;
+  font-size: 2.1vw;
+}
