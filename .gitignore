@@ -1,8 +1,6 @@
 .vscode
 __pycache__
 
-credentials.py
-
 *.avi
 *.mkv
 *.mp4
